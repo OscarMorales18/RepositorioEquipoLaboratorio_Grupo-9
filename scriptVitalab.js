@@ -168,3 +168,29 @@ SeptimoBoton.addEventListener("click",()=>{
     $("#SextaContenido").classList.remove("desplegado");
     $("#SeptimaContenido").classList.remove("oculto");
 })
+
+async function pokedex(arrayid, contenedor) {
+    try {
+        let peticion = await fetch(`https://pokeapi.co/api/v2/pokemon/${arrayid}`);
+        let respuesta = await peticion.json();
+        let tarjeta = 
+        `<div class="tarjeta">
+            <p>Nombre del pokemon: ${respuesta.name}, Id: ${respuesta.id}</p>
+            <img src=${respuesta.sprites.other['official-artwork'].front_default} width="200">
+        </div>`;
+        contenedor.innerHTML += tarjeta;
+    } catch (error) {
+        alert("No se pudo encontrar al pokemon :(");
+    }
+}
+
+let pokemonAleatorio = (max) => {
+    let idAleatorio = Math.round(Math.random()*max);
+    return idAleatorio;
+}
+
+let contenedorSegundo = $(".contenedor2");
+let contenedorSeptimo = $(".contenedor7");
+
+pokedex(pokemonAleatorio(100), contenedorSegundo);
+pokedex(pokemonAleatorio(100), contenedorSeptimo);

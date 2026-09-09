@@ -356,6 +356,10 @@ section .wave.wave4 {
     display: none;
 }
 
+.tarjeta {
+    position: relative;
+}
+
 
 @keyframes animacionOlaLeft{
     0%{
