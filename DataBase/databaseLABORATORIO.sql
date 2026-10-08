@@ -4,15 +4,37 @@ CREATE DATABASE IF NOT EXISTS VitaLab
 
 USE VitaLab;
 
-/*tabla alumno y tabla estado (solvente, muerto no se)*/
+CREATE TABLE carrera_alumno (
+    id_carrera_alumno INT NOT NULL AUTO_INCREMENT,
+    nombre_carrera_alumno VARCHAR(100) NOT NULL,
+    descripcion_carrera_alumno VARCHAR(255),
+    activo_carrera_alumno TINYINT NOT NULL DEFAULT 1,
+    CONSTRAINT pk_carrera_alumno PRIMARY KEY (id_carrera_alumno)
+);
 
-/*CREATE TABLE carrera (
-    id_carrera INT NOT NULL AUTO_INCREMENT,
-    nombre VARCHAR(100) NOT NULL,
-    descripción VARCHAR(255),
-    activo TINYINT(1) NOT NULL DEFAULT 1,
-    CONSTRAINT pk_carrera PRIMARY KEY (id_carrera)
-);*/
+CREATE TABLE estado_alumno (
+    id_estado_alumno INT NOT NULL AUTO_INCREMENT,
+    nombre_estado_alumno VARCHAR(50) NOT NULL,
+    CONSTRAINT pk_estado_alumno PRIMARY KEY (id_estado_alumno)
+);
+
+CREATE TABLE alumno (
+    id_alumno INT NOT NULL AUTO_INCREMENT,
+    id_carrera_alumno INT NOT NULL,
+    id_estado_alumno INT NOT NULL,
+    carne_alumno VARCHAR(10) NOT NULL,
+    nombre_alumno VARCHAR(100) NOT NULL,
+    apellido_alumno VARCHAR(100) NOT NULL,
+    correo_alumno VARCHAR(100) NOT NULL,
+    fecha_nacimiento_alumno DATE NOT NULL,
+    activo_alumno TINYINT NOT NULL DEFAULT 1,
+    fecha_registro_alumno DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT pk_alumno PRIMARY KEY (id_alumno),
+    CONSTRAINT uq_alumno_carne UNIQUE (carne_alumno),
+    CONSTRAINT uq_alumno_correo UNIQUE (correo_alumno),
+    CONSTRAINT fk_alumno_carrera FOREIGN KEY (id_carrera_alumno) REFERENCES carrera_alumno(id_carrera_alumno),
+    CONSTRAINT fk_alumno_estado FOREIGN KEY (id_estado_alumno) REFERENCES estado_alumno(id_estado_alumno)
+);
 
 /*muestras, medicion y pesaje, analisis, preparacion, control termico, etc*/
 CREATE TABLE categoria_equipo (
@@ -79,11 +101,13 @@ CREATE TABLE estado_prestamo (
 CREATE TABLE prestamo (
     id_prestamo INT NOT NULL AUTO_INCREMENT,
     id_usuario INT NOT NULL,
+    id_alumno INT NOT NULL,
     id_estado_prestamo INT NOT NULL,
     fecha_prestamo DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     fecha_devolucion_esperada DATE NOT NULL,
     CONSTRAINT pk_prestamo PRIMARY KEY (id_prestamo),
     CONSTRAINT fk_prestamo_usuario FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
+    CONSTRAINT fk_prestamo_alumno FOREIGN KEY (id_alumno) REFERENCES alumno(id_alumno),
     CONSTRAINT fk_prestamo_estado FOREIGN KEY (id_estado_prestamo) REFERENCES estado_prestamo(id_estado_prestamo)
 );
 
@@ -109,11 +133,13 @@ CREATE TABLE devolucion (
     id_devolucion INT NOT NULL AUTO_INCREMENT,
     id_prestamo INT NOT NULL,
     id_usuario INT NOT NULL,
+    id_alumno INT NOT NULL,
     fecha_devolucion DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     observaciones_devolucion VARCHAR(75) NOT NULL,
     CONSTRAINT pk_devolucion PRIMARY KEY (id_devolucion),
     CONSTRAINT fk_devolucion_prestamo FOREIGN KEY (id_prestamo) REFERENCES prestamo(id_prestamo),
-    CONSTRAINT fk_devolucion_encargado FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+    CONSTRAINT fk_devolucion_encargado FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario),
+    CONSTRAINT fk_devolucion_alumno FOREIGN KEY (id_alumno) REFERENCES alumno(id_alumno)
 );
 
 CREATE TABLE detalle_devolucion (
