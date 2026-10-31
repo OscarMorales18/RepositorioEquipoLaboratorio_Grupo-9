@@ -19,7 +19,7 @@ class M_Equipos
 
     function SELECT_EQUIPOS()
     {
-        $query = "SELECT id_equipo as id, id_categoria, id_estado_equipo as id_estado, codigo_equipo as codigo, nombre_equipo as nombre, descripcion_equipo as descripcion, numero_serie, fecha_adquisicion, imagen_url FROM equipo ORDER BY id_equipo DESC";
+        $query = "SELECT e.id_equipo AS id, e.id_categoria, e.id_estado_equipo AS id_estado, c.nombre_categoria AS categoria, s.nombre_estado_equipo AS estado, e.codigo_equipo AS codigo, e.nombre_equipo AS nombre, e.descripcion_equipo AS descripcion, e.numero_serie, e.fecha_adquisicion, e.imagen_url, e.activo, CASE WHEN e.activo = 1 AND LOWER(s.nombre_estado_equipo) = 'existente' AND NOT EXISTS (SELECT 1 FROM detalle_prestamo dp INNER JOIN prestamo p ON p.id_prestamo = dp.id_prestamo INNER JOIN estado_prestamo ep ON ep.id_estado_prestamo = p.id_estado_prestamo WHERE dp.id_equipo = e.id_equipo AND LOWER(ep.nombre_estado_prestamo) = 'proceso') THEN 1 ELSE 0 END AS disponible FROM equipo e INNER JOIN categoria_equipo c ON c.id_categoria = e.id_categoria INNER JOIN estado_equipo s ON s.id_estado_equipo = e.id_estado_equipo ORDER BY e.id_equipo DESC";
         $statement = $this->connection->prepare($query);
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -82,9 +82,9 @@ class M_Equipos
 
     function DELETE_EQUIPO($id_equipo)
     {
-        $query = "DELETE FROM equipo WHERE id_equipo = :id";
+        $query = "UPDATE equipo SET activo = 0 WHERE id_equipo = :id";
         $statement = $this->connection->prepare($query);
         $statement->execute(['id' => $id_equipo]);
-        $this->response->success("Equipo eliminado correctamente", [], 1);
+        $this->response->success("Equipo dado de baja correctamente", [], 1);
     }
 }
