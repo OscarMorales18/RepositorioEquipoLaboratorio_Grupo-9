@@ -261,7 +261,7 @@ INSERT INTO estado_equipo(nombre_estado_equipo) VALUES
 
 INSERT INTO carrera_alumno(id_carrera_alumno, nombre_carrera_alumno, descripcion_carrera_alumno, activo_carrera_alumno) VALUES (1, 'Medicina', 'Carrera enfocada en la salud y recuperación de los demás.', 1);
 
-INSERT INTO estado_alumno(id_estado_alumno, nombre_estado_alumno) VALUES (1, 'Activo');
+ INSERT INTO estado_alumno (nombre_estado_alumno) VALUES ('Activo'), ('Inactivo'), ('Suspendido'), ('Graduado'); 
 
 INSERT INTO alumno(id_alumno, id_carrera_alumno, id_estado_alumno, carne_alumno, nombre_alumno, apellido_alumno, correo_alumno, fecha_nacimiento_alumno, activo_alumno, fecha_registro_alumno) VALUES (4, 1, 1, '9959233071', 'Oscarito', 'Morales', 'oscar@miumg.edu.ght', '2026-10-20', 1, '2026-10-20 10:07:48');
 INSERT INTO alumno(id_alumno, id_carrera_alumno, id_estado_alumno, carne_alumno, nombre_alumno, apellido_alumno, correo_alumno, fecha_nacimiento_alumno, activo_alumno, fecha_registro_alumno) VALUES (5, 1, 1, '9959233117', 'Andre', 'Gonzales', 'andre@gmail.com', '2026-10-22', 1, '2026-10-22 22:30:04');
@@ -276,3 +276,11 @@ VALUES (1, 6, 1, 1, 1, 1);
 
 INSERT INTO `usuario` (`id_usuario`, `id_perfil`, `carne_usuario`, `nombre_usuario`, `apellido_usuario`, `correo_usuario`, `contrasena_usuario`, `activo_usuario`, `fecha_creacion_usuario`) VALUES
 (2, 1, '9959-23-3070', 'Oscar', 'Morales', 'oscar@miumg.edu.gt ', '$2y$10$Jjfpkw.CCO7vPuZEkDD7HuPNRxF3fC1d7aopOlux3muq.oUhPLSCO', 1, '2026-10-07 08:44:37');
+
+INSERT INTO categoria_equipo (nombre_categoria, descripcion_categoria) VALUES ('Muestras', 'Equipo para toma y manejo de muestras'), ('Medición y pesaje', 'Balanzas, pH metros y equipo de medición'), ('Análisis', 'Microscopios y equipo de análisis'), ('Preparación', 'Material y equipo para preparar soluciones'), ('Control térmico', 'Hornos, incubadoras y equipo de calentamiento');
+
+INSERT INTO estado_condicion_devolucion (nombre_estado_condicion_devolucion) VALUES ('dañado'), ('intacto'), ('incompleto'), ('completo');
+
+INSERT INTO estado_equipo (nombre_estado_equipo) VALUES ('existente'), ('rentado'),  ('agotado'), ('dañado'), ('En mantenimiento');
+
+INSERT INTO estado_prestamo (nombre_estado_prestamo) VALUES ('en proceso'), ('completo'),  ('incompleto'), ('no pago');
