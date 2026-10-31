@@ -348,7 +348,7 @@ section .wave.wave4 {
     display: block;
 }
 
-.SegundaSeccion, .TercerSeccion, .CuartaSeccion, .QuintaSeccion, .SextaSeccion, .SeptimaSeccion {
+.SegundaSeccion, .TercerSeccion, .CuartaSeccion, .QuintaSeccion, .SextaSeccion, .SeptimaSeccion, .OctavaSeccion {
     display: none;
 }
 
@@ -420,7 +420,7 @@ section .wave.wave4 {
     background: #c6f4f4;         
 }
 
-#form, #formPermiso, #formPerfilModulo, #formPerfiles, #formModulo, #formCarrera, #formAlumno {
+#form, #formPermiso, #formPerfilModulo, #formPerfiles, #formModulo, #formCarrera, #formAlumno, #formEquipo {
     display: flex;
     flex-direction: column;  
     align-items: center;
