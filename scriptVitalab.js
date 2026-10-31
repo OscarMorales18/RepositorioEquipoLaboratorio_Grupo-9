@@ -43,6 +43,7 @@ const CuartoBoton = document.getElementById("CuartoBoton");
 const QuintoBoton = document.getElementById("QuintoBoton");
 const SextoBoton = document.getElementById("SextoBoton");
 const SeptimoBoton = document.getElementById("SeptimoBoton");
+const OctavaBoton = document.getElementById("OctavaBoton");
 
 let $ = (clase) => document.querySelector(clase);
 
@@ -80,6 +81,7 @@ PrimerBoton.addEventListener("click",()=>{
     $("#QuintoContenido").classList.add("oculto");
     $("#SextaContenido").classList.add("oculto");
     $("#SeptimaContenido").classList.add("oculto");
+    $("#OctavaContenido").classList.add("oculto");
 
     $("#PrimerContenido").classList.remove("oculto");
     $("#SegundoContenido").classList.remove("desplegado");
@@ -88,6 +90,7 @@ PrimerBoton.addEventListener("click",()=>{
     $("#QuintoContenido").classList.remove("desplegado");
     $("#SextaContenido").classList.remove("desplegado");
     $("#SeptimaContenido").classList.remove("desplegado");
+    $("#OctavaContenido").classList.remove("desplegado");
 })
 
 SegundoBoton.addEventListener("click",()=>{
@@ -98,6 +101,7 @@ SegundoBoton.addEventListener("click",()=>{
     $("#QuintoContenido").classList.add("oculto");
     $("#SextaContenido").classList.add("oculto");
     $("#SeptimaContenido").classList.add("oculto");
+     $("#OctavaContenido").classList.add("oculto");
 
     $("#PrimerContenido").classList.remove("desplegado");
     $("#SegundoContenido").classList.remove("oculto");
@@ -106,6 +110,7 @@ SegundoBoton.addEventListener("click",()=>{
     $("#QuintoContenido").classList.remove("desplegado");
     $("#SextaContenido").classList.remove("desplegado");
     $("#SeptimaContenido").classList.remove("desplegado");
+    $("#OctavaContenido").classList.remove("desplegado");
 })
 
 TercerBoton.addEventListener("click",()=>{
@@ -116,6 +121,7 @@ TercerBoton.addEventListener("click",()=>{
     $("#QuintoContenido").classList.add("oculto");
     $("#SextaContenido").classList.add("oculto");
     $("#SeptimaContenido").classList.add("oculto");
+     $("#OctavaContenido").classList.add("oculto");
 
     $("#PrimerContenido").classList.remove("desplegado");
     $("#SegundoContenido").classList.remove("desplegado");
@@ -124,6 +130,7 @@ TercerBoton.addEventListener("click",()=>{
     $("#QuintoContenido").classList.remove("desplegado");
     $("#SextaContenido").classList.remove("desplegado");
     $("#SeptimaContenido").classList.remove("desplegado");
+    $("#OctavaContenido").classList.remove("desplegado");
 })
 
 CuartoBoton.addEventListener("click",()=>{
@@ -134,6 +141,7 @@ CuartoBoton.addEventListener("click",()=>{
     $("#QuintoContenido").classList.add("oculto");
     $("#SextaContenido").classList.add("oculto");
     $("#SeptimaContenido").classList.add("oculto");
+     $("#OctavaContenido").classList.add("oculto");
 
     $("#PrimerContenido").classList.remove("desplegado");
     $("#SegundoContenido").classList.remove("desplegado");
@@ -142,6 +150,7 @@ CuartoBoton.addEventListener("click",()=>{
     $("#QuintoContenido").classList.remove("desplegado");
     $("#SextaContenido").classList.remove("desplegado");
     $("#SeptimaContenido").classList.remove("desplegado");
+    $("#OctavaContenido").classList.remove("desplegado");
 })
 
 QuintoBoton.addEventListener("click",()=>{
@@ -152,6 +161,7 @@ QuintoBoton.addEventListener("click",()=>{
     $("#QuintoContenido").classList.add("desplegado");
     $("#SextaContenido").classList.add("oculto");
     $("#SeptimaContenido").classList.add("oculto");
+     $("#OctavaContenido").classList.add("oculto");
 
     $("#PrimerContenido").classList.remove("desplegado");
     $("#SegundoContenido").classList.remove("desplegado");
@@ -160,6 +170,7 @@ QuintoBoton.addEventListener("click",()=>{
     $("#QuintoContenido").classList.remove("oculto");
     $("#SextaContenido").classList.remove("desplegado");
     $("#SeptimaContenido").classList.remove("desplegado");
+    $("#OctavaContenido").classList.remove("desplegado");
 })
 
 SextoBoton.addEventListener("click",()=>{
@@ -170,6 +181,7 @@ SextoBoton.addEventListener("click",()=>{
     $("#QuintoContenido").classList.add("oculto");
     $("#SextaContenido").classList.add("desplegado");
     $("#SeptimaContenido").classList.add("oculto");
+     $("#OctavaContenido").classList.add("oculto");
 
     $("#PrimerContenido").classList.remove("desplegado");
     $("#SegundoContenido").classList.remove("desplegado");
@@ -178,6 +190,7 @@ SextoBoton.addEventListener("click",()=>{
     $("#QuintoContenido").classList.remove("desplegado");
     $("#SextaContenido").classList.remove("oculto");
     $("#SeptimaContenido").classList.remove("desplegado");
+    $("#OctavaContenido").classList.remove("desplegado");
     
 })
 
@@ -189,6 +202,7 @@ SeptimoBoton.addEventListener("click",()=>{
     $("#QuintoContenido").classList.add("oculto");
     $("#SextaContenido").classList.add("oculto");
     $("#SeptimaContenido").classList.add("desplegado");
+    $("#OctavaContenido").classList.add("oculto");
 
     $("#PrimerContenido").classList.remove("desplegado");
     $("#SegundoContenido").classList.remove("desplegado");
@@ -197,7 +211,29 @@ SeptimoBoton.addEventListener("click",()=>{
     $("#QuintoContenido").classList.remove("desplegado");
     $("#SextaContenido").classList.remove("desplegado");
     $("#SeptimaContenido").classList.remove("oculto");
+    $("#OctavaContenido").classList.remove("desplegado");
 })
+
+OctavaBoton.addEventListener("click",()=>{
+    $("#PrimerContenido").classList.add("oculto");
+    $("#SegundoContenido").classList.add("oculto");
+    $("#TercerContenido").classList.add("oculto");
+    $("#CuartoContenido").classList.add("oculto");
+    $("#QuintoContenido").classList.add("oculto");
+    $("#SextaContenido").classList.add("oculto");
+    $("#SeptimaContenido").classList.add("oculto");
+    $("#OctavaContenido").classList.add("desplegado");
+
+    $("#PrimerContenido").classList.remove("desplegado");
+    $("#SegundoContenido").classList.remove("desplegado");
+    $("#TercerContenido").classList.remove("desplegado");
+    $("#CuartoContenido").classList.remove("desplegado");
+    $("#QuintoContenido").classList.remove("desplegado");
+    $("#SextaContenido").classList.remove("desplegado");
+    $("#SeptimaContenido").classList.remove("desplegado");
+    $("#OctavaContenido").classList.remove("oculto");
+})
+
 
 const usuarioData = JSON.parse(localStorage.getItem("vitalab_usuario"));
 $(".nombre").textContent = usuarioData.nombre;
@@ -315,9 +351,9 @@ MantenimientoCarreras();
 
 async function MantenimientoEquipos(){
     const respuesta = await fetch("API/Vista/Equipos/indexEquipos.php");
-    $(".contenedor_carrera").innerHTML = await respuesta.text();
+    $(".contenedor_equipos").innerHTML = await respuesta.text();
 
-    VerificarModulo($(".contenedor_carrera"));    
+    VerificarModulo($(".contenedor_equipos"));    
 
     const script = document.createElement("script");
     script.src = "API/Vista/Equipos/scriptEquipos.js";
