@@ -1868,3 +1868,193 @@ main > section:has(> .wave) {
         flex: 1 1 100%;
     }
 }
+
+/*---------------------------------------------------------------MODO OSCURO (fondo y contenido)---------------------------------------------------------------*/
+
+body.dark-mode {
+    background-color: #0F1E29;
+}
+
+body.dark-mode main {
+    color: #E6E6E6;
+}
+
+/*equipos y dashboard en modo oscuro*/
+body.dark-mode .inventario,
+body.dark-mode .inventario_encabezado .titulo,
+body.dark-mode .inventario_encabezado p,
+body.dark-mode .inventario_resumen,
+body.dark-mode .inventario_filtro label,
+body.dark-mode .inventario .campos label,
+body.dark-mode .inventario_catalogos form label,
+body.dark-mode .dashboard_panel h2,
+body.dark-mode .dashboard_leyenda,
+body.dark-mode .dashboard_fila_texto {
+    color: #E6E6E6;
+}
+
+body.dark-mode .inventario_ayuda_seleccion,
+body.dark-mode .dashboard_subtitulo,
+body.dark-mode .dashboard_tarjeta_titulo,
+body.dark-mode .dashboard_tarjeta_detalle,
+body.dark-mode .dashboard_fila_texto span:last-child,
+body.dark-mode .dashboard .inventario_mensaje_estado,
+body.dark-mode .inventario_catalogo_instruccion {
+    color: #9FB3BC;
+}
+
+body.dark-mode .inventario button,
+body.dark-mode .inventario_filtro input,
+body.dark-mode .inventario_filtro select,
+body.dark-mode .inventario .campos input,
+body.dark-mode .inventario .campos select,
+body.dark-mode .inventario_catalogos form input {
+    border-color: #068988;
+    background: #12303F;
+    color: #E6E6E6;
+    color-scheme: dark;
+}
+
+body.dark-mode .inventario button.AgregarModificar,
+body.dark-mode .inventario button:hover:not(:disabled) {
+    border-color: #068988;
+    background: #068988;
+    color: #FFFFFF;
+}
+
+body.dark-mode .inventario button:disabled {
+    color: #6F8791;
+}
+
+body.dark-mode .inventario_filtro input::placeholder,
+body.dark-mode .inventario .campos input::placeholder {
+    color: #9FB3BC;
+}
+
+body.dark-mode .inventario_tabla_scroll {
+    border-color: #1E4A5C;
+}
+
+body.dark-mode .inventario .inventario_tabla {
+    background: #12303F;
+}
+
+body.dark-mode .inventario .inventario_tabla td {
+    border-bottom-color: #1E4A5C;
+    color: #E6E6E6;
+}
+
+body.dark-mode .inventario .inventario_tabla tbody tr:hover,
+body.dark-mode .inventario .inventario_tabla tbody tr.equipo_seleccionado {
+    background: #0D3B4A;
+}
+
+body.dark-mode .inventario_modal_contenido {
+    background: #12303F;
+    color: #E6E6E6;
+}
+
+body.dark-mode .inventario_modal_contenido h2,
+body.dark-mode .inventario_cerrar {
+    color: #E6E6E6 !important;
+}
+
+body.dark-mode .inventario_catalogo_columna,
+body.dark-mode .inventario_catalogos .inventario_catalogo_lista li {
+    border-color: #1E4A5C;
+    background: #0F1E29;
+    color: #E6E6E6;
+}
+
+body.dark-mode .inventario_imagen_previa {
+    border-color: #1E4A5C;
+    background: #0F1E29;
+    color: #9FB3BC;
+}
+
+/*dashboard: tarjetas y paneles*/
+body.dark-mode .inventario button.dashboard_tarjeta,
+body.dark-mode .dashboard_panel {
+    border-color: #1E4A5C;
+    border-top-color: #068988;
+    background: #12303F;
+    color: #E6E6E6;
+}
+
+body.dark-mode .inventario button.dashboard_tarjeta:hover:not(:disabled) {
+    border-color: #1E4A5C;
+    border-top-color: #068988;
+    background: #0D3B4A;
+    color: #E6E6E6;
+}
+
+body.dark-mode .inventario button.dashboard_tarjeta.dashboard_tarjeta_alerta,
+body.dark-mode .inventario button.dashboard_tarjeta.dashboard_tarjeta_alerta:hover:not(:disabled) {
+    border-top-color: #D06A6A;
+}
+
+body.dark-mode .dashboard_tarjeta_alerta strong,
+body.dark-mode #mensajeDashboard {
+    color: #E58A8A;
+}
+
+body.dark-mode .dashboard_apilada,
+body.dark-mode .dashboard_pista {
+    background: #1E4A5C;
+}
+
+/*graficas del dashboard (SVG con colores en atributos)*/
+body.dark-mode .dashboard_grafica svg line[stroke="#E1E7E9"],
+body.dark-mode .dashboard_dona svg circle[stroke="#E1E7E9"] {
+    stroke: #1E4A5C;
+}
+
+body.dark-mode .dashboard_grafica svg text[fill="#4D626B"],
+body.dark-mode .dashboard_dona svg text[fill="#4D626B"] {
+    fill: #9FB3BC;
+}
+
+body.dark-mode .dashboard_grafica svg text[fill="#043D59"],
+body.dark-mode .dashboard_dona svg text[fill="#043D59"] {
+    fill: #E6E6E6;
+}
+
+body.dark-mode .dashboard_dona svg circle[stroke="#043D59"] {
+    stroke: #5BB5D6;
+}
+
+body.dark-mode .dashboard_grafica svg rect[fill="#043D59"],
+body.dark-mode .dashboard_azul {
+    fill: #5BB5D6;
+    background: #5BB5D6;
+}
+
+body.dark-mode :is(.contenedor_usuario, .contenedor_modulo, .contenedor_perfil, .contenedor_perfilmodulo, .contenedor_alumno, .contenedor_carrera, .contenedor_prestamos, .contenedor_devoluciones) input,
+body.dark-mode :is(.contenedor_usuario, .contenedor_modulo, .contenedor_perfil, .contenedor_perfilmodulo, .contenedor_alumno, .contenedor_carrera, .contenedor_prestamos, .contenedor_devoluciones) select {
+    border: 1px solid #068988;
+    background-color: #12303F;
+    color: #E6E6E6;
+    color-scheme: dark;
+}
+
+body.dark-mode :is(.contenedor_usuario, .contenedor_modulo, .contenedor_perfil, .contenedor_perfilmodulo, .contenedor_alumno, .contenedor_carrera, .contenedor_prestamos, .contenedor_devoluciones) input::placeholder {
+    color: #9FB3BC;
+}
+
+body.dark-mode :is(.contenedor_usuario, .contenedor_modulo, .contenedor_perfil, .contenedor_perfilmodulo, .contenedor_alumno, .contenedor_carrera, .contenedor_prestamos, .contenedor_devoluciones) .contenido,
+body.dark-mode :is(.contenedor_usuario, .contenedor_modulo, .contenedor_perfil, .contenedor_perfilmodulo, .contenedor_alumno, .contenedor_carrera, .contenedor_prestamos, .contenedor_devoluciones) .contenido td {
+    border-color: #068988;
+}
+
+body.dark-mode :is(.contenedor_usuario, .contenedor_modulo, .contenedor_perfil, .contenedor_perfilmodulo, .contenedor_alumno, .contenedor_carrera, .contenedor_prestamos, .contenedor_devoluciones) .contenido tbody tr:hover {
+    background: #0D3B4A;
+}
+
+body.dark-mode :is(.contenedor_usuario, .contenedor_modulo, .contenedor_perfil, .contenedor_perfilmodulo, .contenedor_alumno, .contenedor_carrera, .contenedor_prestamos, .contenedor_devoluciones) .contenido tbody tr.solicitud-seleccionada {
+    background: #0D3B4A;
+}
+
+/*sin marco alrededor de la pagina: la barra lateral y el contenido llegan hasta el borde de la ventana*/
+body {
+    border: 0;
+}
